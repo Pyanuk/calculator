@@ -1,0 +1,14 @@
+C:\Users\rhali\source\repos\1234\1234\obj\Debug\net6.0\1234.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rhali\source\repos\1234\1234\obj\Debug\net6.0\1234.AssemblyInfoInputs.cache
+C:\Users\rhali\source\repos\1234\1234\obj\Debug\net6.0\1234.AssemblyInfo.cs
+C:\Users\rhali\source\repos\1234\1234\obj\Debug\net6.0\1234.csproj.CoreCompileInputs.cache
+C:\Users\rhali\source\repos\1234\1234\bin\Debug\net6.0\1234.exe
+C:\Users\rhali\source\repos\1234\1234\bin\Debug\net6.0\1234.deps.json
+C:\Users\rhali\source\repos\1234\1234\bin\Debug\net6.0\1234.runtimeconfig.json
+C:\Users\rhali\source\repos\1234\1234\bin\Debug\net6.0\1234.dll
+C:\Users\rhali\source\repos\1234\1234\bin\Debug\net6.0\1234.pdb
+C:\Users\rhali\source\repos\1234\1234\obj\Debug\net6.0\1234.dll
+C:\Users\rhali\source\repos\1234\1234\obj\Debug\net6.0\refint\1234.dll
+C:\Users\rhali\source\repos\1234\1234\obj\Debug\net6.0\1234.pdb
+C:\Users\rhali\source\repos\1234\1234\obj\Debug\net6.0\1234.genruntimeconfig.cache
+C:\Users\rhali\source\repos\1234\1234\obj\Debug\net6.0\ref\1234.dll
