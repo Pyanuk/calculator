@@ -1,105 +1,110 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Calculator
+namespace ConsoleApp5
 {
-    class Program
+    internal class ramil
     {
-        static void Main(string[] args)
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public DateTime Date { get; set; }
+        public DateTime Deadline { get; set; }
+    }
+}
+class MPT
+{
+    static List<ramil> ramils = new List<ramil>();
+
+    static int selectedNoteIndex = 0;
+
+    static void Main(string[] args)
+    {
+
+        ramils.Add(new ramil
         {
-            while (true)
+            Title = "Пойти в МПТ",
+            Description = "Показать код Софии Алексеевне ",
+            Date = new DateTime(2023, 10, 12),
+            Deadline = new DateTime(2023, 10, 13)
+        });
+
+        ramils.Add(new ramil
+        {
+            Title = "Закончить 1 курс",
+            Description = "Окончить 1 курс на 4 и 5",
+            Date = new DateTime(2023, 10, 12),
+            Deadline = new DateTime(2023, 10, 12)
+        });
+
+        ramils.Add(new ramil
+        {
+            Title = "Купить сиги",
+            Description = "Ебаный винстон синий",
+            Date = new DateTime(2023, 10, 12),
+            Deadline = new DateTime(2023, 10, 12)
+        });
+
+        ramils.Add(new ramil
+        {
+            Title = "Пойти по хавать",
+            Description = "Схавать пэрэмэч(татарское нацональное блюдо)",
+            Date = new DateTime(2023, 10, 12),
+            Deadline = new DateTime(2023, 10, 12)
+        });
+        ramils.Add(new ramil
+        {
+            Title = "Купить права",
+            Description = "Батя договориться за 40к",
+            Date = new DateTime(2023, 10, 12),
+            Deadline = new DateTime(2023, 10, 12)
+        });
+
+        while (true)
+        {
+            Console.Clear(); 
+            var currentNote = ramils[selectedNoteIndex];
+            Console.WriteLine(":-)");
+            Console.WriteLine("Ежедневник");
+            Console.WriteLine($"Заголовок: {currentNote.Title}");
+            Console.WriteLine($"Описание: {currentNote.Description}");
+            Console.WriteLine($"Дата: {currentNote.Date}");
+            Console.WriteLine($"Дедлайн: {currentNote.Deadline}");
+
+            // Wait for right or left arrow key input
+            var key = Console.ReadKey().Key;
+            if (key == ConsoleKey.LeftArrow)
             {
-                Console.WriteLine("Выберите действие:");
-                Console.WriteLine("1. Сложить 2 числа");
-                Console.WriteLine("2. Вычесть первое из второго");
-                Console.WriteLine("3. Перемножить два числа");
-                Console.WriteLine("4. Разделить первое на второе");
-                Console.WriteLine("5. Возвести в степень N первое число");
-                Console.WriteLine("6. Найти квадратный корень из числа");
-                Console.WriteLine("7. Найти 1 процент от числа");
-                Console.WriteLine("8. Найти факториал числа");
-                Console.WriteLine("9. Выйти из программы");
-
-                int a = int.Parse(Console.ReadLine()); //Parse я использую для того чтобы не писать 2 строчки когда текст перевожу в числовое значение,потому что пальцы устали
-
-                switch (a)
-                {
-                    case 1:
-                        Console.Write("Введите первое число: ");
-                        double sum1 = double.Parse(Console.ReadLine());
-                        Console.Write("Введите второе число: ");
-                        double sum2 = double.Parse(Console.ReadLine());
-                        Console.WriteLine($"Результат сложения: {sum1 + sum2}");
-                        break;
-                    case 2:
-                        Console.Write("Введите первое число: ");
-                        double sub1 = double.Parse(Console.ReadLine());
-                        Console.Write("Введите второе число: ");
-                        double sub2 = double.Parse(Console.ReadLine());
-                        Console.WriteLine($"Результат вычитания: {sub2 - sub1}");
-                        break;
-                    case 3:
-                        Console.Write("Введите первое число: ");
-                        double mul1 = double.Parse(Console.ReadLine());
-                        Console.Write("Введите второе число: ");
-                        double mul2 = double.Parse(Console.ReadLine());
-                        Console.WriteLine($"Результат умножения: {mul1 * mul2}");
-                        break;
-                    case 4:
-                        Console.Write("Введите первое число: ");
-                        double div1 = double.Parse(Console.ReadLine());
-                        Console.Write("Введите второе число: ");
-                        double div2 = double.Parse(Console.ReadLine());
-                        if (div2 != 0)
-                        {
-                            Console.WriteLine($"Результат деления: {div1 / div2}");
-                        }
-                        else
-                        {
-                            Console.WriteLine("На 0 делить нельзя, вернитесь в младшую школу!!!!");
-                        }
-                        break;
-                    case 5:
-                        Console.Write("Введите число: ");
-                        double num1 = double.Parse(Console.ReadLine());
-                        Console.Write("Введите степень: ");
-                        int b = int.Parse(Console.ReadLine());
-                        Console.WriteLine($"Результат возведения в степень: {Math.Pow(num1, b)}");//метод Math.Pow возводит в степень
-                        break;
-                    case 6:
-                        Console.Write("Введите число: ");
-                        double sqrt = double.Parse(Console.ReadLine());
-                        if (sqrt >= 0)
-                        {
-                            Console.WriteLine($"Результат извлечения квадратного корня: {Math.Sqrt(sqrt)}");//math.sqrt соответственно ищет корень, прям с питона скатали
-                        }
-                        else
-                        {
-                            Console.WriteLine("Такое вселенная предусмотрела только в комплексных числах, ради Аллаха выберите другой вариант");
-                        }
-                        break;
-                    case 7:
-                        Console.Write("Введите число: ");
-                        double с = double.Parse(Console.ReadLine());
-                        Console.WriteLine($"1 процент от числа: {с / 100}");//он меркантильный, без знака доллара не считает
-                        break;
-                    case 8:
-                        Console.Write("Введите число: ");
-                        int n = int.Parse(Console.ReadLine());
-                        int d = 1;
-                        for (int i = 2; i <= n; i++)//это я у вас в третьей лекции  нашла)))
-                        {
-                            d *= i;// умножить и выполнить присвоение
-                        }
-                        Console.WriteLine($"Факториал числа: {d}");
-                        break;
-                    case 9:
-                        Console.WriteLine("Программа завершена");
-                        return;//return завершает выполнение функции
-                    default:
-                        Console.WriteLine("Выберите число из списка");//это чтобы вы не сломали её выбрав другое число
-                        break;
-                }
+                MoveToPreviousNote();
+            }
+            else if (key == ConsoleKey.RightArrow)
+            {
+                MoveToNextNote();
             }
         }
+    }
+
+    static void MoveToNextNote()
+    {
+        selectedNoteIndex++;
+        if (selectedNoteIndex >= ramils.Count)
+            selectedNoteIndex = 0;
+    }
+
+    static void MoveToPreviousNote()
+    {
+        selectedNoteIndex--;
+        if (selectedNoteIndex < 0)
+            selectedNoteIndex = ramils.Count - 1;
+    }
+
+    internal class ramil
+    {
+        public string Description { get; internal set; }
+        public string Title { get; internal set; }
+        public DateTime Date { get; internal set; }
+        public DateTime Deadline { get; internal set; }
     }
 }
